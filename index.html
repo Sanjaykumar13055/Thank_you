@@ -16,8 +16,9 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            overflow: hidden;
-        }
+            overflow-y: auto; /* Changed from hidden to auto for safety */
+            padding: 20px;    /* Adds a buffer so the card doesn't touch screen edges */
+            }
 
         #canvas {
             position: absolute;
@@ -30,19 +31,20 @@
         }
 
         .container {
-            background: rgba(30, 41, 59, 0.7);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 3rem;
-            border-radius: 32px;
-            max-width: 550px;
-            text-align: center;
-            position: relative;
-            z-index: 5;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-            transform: translateY(20px);
-            opacity: 0;
-            animation: slideUp 0.8s ease forwards;
+        background: rgba(30, 41, 59, 0.7);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 3rem;
+        border-radius: 32px;
+        max-width: 550px;
+        width: 100%;      /* Ensures it stays responsive on narrow screens */
+        text-align: center;
+        position: relative;
+        z-index: 5;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        transform: translateY(20px);
+        opacity: 0;
+        animation: slideUp 0.8s ease forwards;
         }
 
         @keyframes slideUp {
@@ -135,4 +137,5 @@
         };
     </script>
 </body>
+
 </html>
